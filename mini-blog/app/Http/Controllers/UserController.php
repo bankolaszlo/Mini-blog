@@ -23,11 +23,5 @@ class UserController extends Controller
         }
     }
 
-    public function post(){
-        return view('admin.post');
-    }
-    
-    public function createpost(){
-        return view('admin.createpost');
-    }
+
 }

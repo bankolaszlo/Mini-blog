@@ -8,21 +8,23 @@
             }
             @endif
         </h2>
-    </x-slot>
-
+        </x-slot>
+        @section('content')
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
-                   <form action=""></form>
-                   <input type="text" name="" id="">
-                   <input type="text" name="" id="">
-                   <input type="text" name="" id="">
-                   <input type="text" name="" id="">
-                   <input type="text" name="" id="">
-                   <input type="text" name="" id="">
+                    <form action="{{route('admin.createpost')}}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <input type="text" name="title" id="Enter post title here!"><br>
+                        <textarea name="description" id="">
+                        </textarea><br>
+                        <input type="file" name="image" id=""><br>
+                        <input type="submit" name="submit" value="Add post">
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+      @endsection
 </x-app-layout>
