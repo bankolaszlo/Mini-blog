@@ -20,8 +20,8 @@ class AdminController extends Controller
         $imagename = time().'.'.$image->getClientOriginalExtension();
         $request->image->move('img', $imagename);
         $post->image = $imagename;
-        $post->user_name=Auth::user()->name;
-        $post->user_id=Auth::user()->id;
+        $post->user_name=Auth::User()->name;
+        $post->user_id=Auth::User()->id;
         $post->save();
     }
 }
